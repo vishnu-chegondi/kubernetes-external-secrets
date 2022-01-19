@@ -37,13 +37,13 @@ env:
   # AZURE_KEY_VAULT_DNS_SUFFIX: vault.usgovcloudapi.net
 
 # Create environment variables from existing k8s secrets
-envVarsFromSecret: {}
-#  AWS_ACCESS_KEY_ID:
-#    secretKeyRef: aws-credentials
-#    key: id
-#  AWS_SECRET_ACCESS_KEY:
-#    secretKeyRef: aws-credentials
-#    key: key
+envVarsFromSecret:
+ AWS_ACCESS_KEY_ID:
+   secretKeyRef: awssm-secret
+   key: access-key
+ AWS_SECRET_ACCESS_KEY:
+   secretKeyRef: awssm-secret
+   key: secret-access-key
 #  ALICLOUD_ENDPOINT:
 #    secretKeyRef: alicloud-credentials
 #    key: endpoint
