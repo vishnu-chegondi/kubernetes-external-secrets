@@ -18,6 +18,7 @@ env:
   AKEYLESS_ACCESS_TYPE:
   #AKEYLESS_ACCESS_TYPE_PARAM can be one of the following: gcp-audience/azure-obj-id/access-key
   #AKEYLESS_ACCESS_TYPE_PARAM:
+  AWS_PROFILE:
 
 
   # Print logs level as string ("info") rather than integer (30)
