@@ -38,13 +38,13 @@ env:
   # AZURE_KEY_VAULT_DNS_SUFFIX: vault.usgovcloudapi.net
 
 # Create environment variables from existing k8s secrets
-envVarsFromSecret:
- AWS_ACCESS_KEY_ID:
-   secretKeyRef: awssm-secret
-   key: access-key
- AWS_SECRET_ACCESS_KEY:
-   secretKeyRef: awssm-secret
-   key: secret-access-key
+envVarsFromSecret: {}
+#  AWS_ACCESS_KEY_ID:
+#    secretKeyRef: awssm-secret
+#    key: access-key
+#  AWS_SECRET_ACCESS_KEY:
+#    secretKeyRef: awssm-secret
+#    key: secret-access-key
 #  ALICLOUD_ENDPOINT:
 #    secretKeyRef: alicloud-credentials
 #    key: endpoint
@@ -119,7 +119,9 @@ serviceAccount:
   # Specifies whether a service account should be created
   create: true
   # Specifies annotations for this service account
-  annotations: {}
+  annotations: {
+    eks.amazonaws.com/role-arn: arn:aws:iam::672327909798:role/platform/kaas-cluster/cluster/SecretsRead-csd-hades82d19
+  }
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name:
